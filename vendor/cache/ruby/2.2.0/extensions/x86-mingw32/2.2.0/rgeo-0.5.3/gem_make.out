@@ -1,0 +1,15 @@
+C:/RailsInstaller/Ruby2.2.0/bin/ruby.exe -r ./siteconf20160720-12976-lz561h.rb extconf.rb
+checking for proj_api.h... no
+**** WARNING: Unable to find Proj headers or Proj version is too old.
+**** Compiling without Proj support.
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+generating proj4_c_impl-i386-mingw32.def
+compiling main.c
+linking shared-object rgeo/coord_sys/proj4_c_impl.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 proj4_c_impl.so ./.gem.20160720-12976-1lg53r2/rgeo/coord_sys

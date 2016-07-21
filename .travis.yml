@@ -1,0 +1,17 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.3.1
+before_script:
+  - export TZ=America/New_York
+  - psql -c 'create database ddmodels2_test;' -U postgres
+  - bundle exec rake db:create db:structure:load db:migrate
+  - cd /home/travis/build/MAPC/developmentdatabase/searchapp
+  - npm install
+script:
+  - bundle exec rake test
+cache: bundler
+addons:
+  postgresql: '9.3'
+  code_climate:
+    repo_token: ebd431336a17c38b101c377f4300158ce02a4a6588502935120f25eb162a4d70

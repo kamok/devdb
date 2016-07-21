@@ -1,0 +1,23 @@
+current directory: C:/Users/Ka/Desktop/code/developmentdatabase/vendor/cache/ruby/2.3.0/gems/rgeo-0.5.3/ext/proj4_c_impl
+C:/Ruby23-x64/bin/ruby.exe -r ./siteconf20160720-9856-1wuwzea.rb extconf.rb
+checking for proj_api.h... no
+**** WARNING: Unable to find Proj headers or Proj version is too old.
+**** Compiling without Proj support.
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  C:/Users/Ka/Desktop/code/developmentdatabase/vendor/cache/ruby/2.3.0/extensions/x64-mingw32/2.3.0/rgeo-0.5.3/mkmf.log
+
+current directory: C:/Users/Ka/Desktop/code/developmentdatabase/vendor/cache/ruby/2.3.0/gems/rgeo-0.5.3/ext/proj4_c_impl
+make "DESTDIR=" clean
+
+current directory: C:/Users/Ka/Desktop/code/developmentdatabase/vendor/cache/ruby/2.3.0/gems/rgeo-0.5.3/ext/proj4_c_impl
+make "DESTDIR="
+generating proj4_c_impl-x64-mingw32.def
+compiling main.c
+linking shared-object rgeo/coord_sys/proj4_c_impl.so
+
+current directory: C:/Users/Ka/Desktop/code/developmentdatabase/vendor/cache/ruby/2.3.0/gems/rgeo-0.5.3/ext/proj4_c_impl
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 proj4_c_impl.so ./.gem.20160720-9856-rumfs5/rgeo/coord_sys

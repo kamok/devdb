@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    = display_meta_tags site: 'MassBuilds', reverse: true
+
+  %body
+    = render 'shared/header'
+    = yield
+    = render 'shared/footer'
+
+:ruby
+
+  set_meta_tags og: { site_name: 'Development Database' }
+  set_meta_tags fb: { page_id: 'MAPCMetroBoston' }
+  set_meta_tags twitter: {
+    site:       '@MAPCMetroBoston',
+    creator:    '@MAPCMetroBoston',
+  }

@@ -1,0 +1,10 @@
+= link_to development, class: 'development item' do
+  - unless development.street_view.null?
+    .ui.tiny.image
+      %img{ src: development.street_view.data }
+  .middle.aligned.content
+    .header= development.name
+    .meta
+      %span.address= development.display_address(short: true)
+    .description
+      = development.tagline

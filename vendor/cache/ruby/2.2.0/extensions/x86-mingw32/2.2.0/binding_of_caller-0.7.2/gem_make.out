@@ -1,0 +1,12 @@
+C:/RailsInstaller/Ruby2.2.0/bin/ruby.exe -r ./siteconf20160720-12976-1fujsvf.rb extconf.rb
+
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.

@@ -1,0 +1,18 @@
+%h1.ui.header#title
+  = @development.name
+  .sub.header#address
+    %i.icon.marker
+    = succeed ',' do
+      = @development.address
+    - if @development.place_org
+      = link_to "#{@development.place_org.place.name} MA", @development.place_org
+    - else
+      = @development.city
+      = @development.state
+    = @development.zip_code
+%p.tagline
+  = @development.tagline
+  - if @development.website.present? # Can be an empty string
+    = link_to @development.website, target: '_blank' do
+      %i.icon.linkify
+      = @development.website

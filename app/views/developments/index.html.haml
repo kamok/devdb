@@ -1,0 +1,7 @@
+= render_ember_app :searchapp do |head|
+  :javascript
+  
+    document.API_KEY = '#{current_user.try(:api_key)}'
+
+  = head.append do
+    = csrf_meta_tags

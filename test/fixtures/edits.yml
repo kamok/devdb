@@ -1,0 +1,12 @@
+one:
+  fields:
+    - one
+  development: one
+  editor: normal
+  state:  pending
+
+conflict:
+  fields:
+    - two
+  development: one
+  editor: normal

@@ -1,0 +1,172 @@
+#mega-map {
+	height: 500px;
+}
+
+#flash {
+  margin-top: 0;
+  display: none;
+}
+
+.search-grid {
+  background-color: #2196F3;
+  overflow-y: scroll;
+}
+
+.street-view-container {
+  height: 500px;
+}
+
+.masthead{
+  top: 45px;
+}
+
+.results {
+  padding-left: 0 !important;
+}
+
+/*.ui.button {
+  border-radius: 0 !important;
+}*/
+
+/*.ui.massive.button {
+  font-size: 3rem;
+}*/
+
+#map { position:absolute; top:41px; bottom:0; width:100%; }
+
+.map-list-results {
+  /*max-height: calc(45vh) !important;*/
+  overflow-y: scroll;
+  padding-top: 0 !important;
+}
+
+.master-grid {
+  /*height: calc(100vh + 15px) !important;*/
+}
+
+
+.map-container {
+  padding-bottom: 0 !important;
+}
+
+.results-table {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.ui.table {
+  border-radius: 0;
+}
+
+.ui.attached.buttons {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.marker-title {
+    font-weight: 700;
+}
+
+#sidebar {
+  background-color: #1b1c1d;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+  background: red;
+}
+
+/*.main {
+  margin-top: 45px;
+}
+*/
+/*.menu {
+  min-width: 250px;
+}*/
+
+.autocomplete-field {
+  width: 100%;
+}
+
+.autocomplete-field div {
+  width: 100%;
+}
+
+.ui.input input {
+  width: 100%;
+}
+
+#development-map {
+  width: 520px;
+  height: 500px;
+}
+
+.top-menu {
+  top: 100px;
+  position: absolute;
+  background-color: white;
+  z-index: 99;
+  width: 100%;
+  height: 40%;
+}
+
+.ui.flowing.basic.admission.popup.filter-popup {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.mapboxgl-ctrl-top-right {
+  top: 70px;
+}
+
+.bottom-table-drawer {
+  z-index: 100;
+  position: fixed;
+  top: calc(100vh - 70px);
+  width: 100%;
+  /*overflow-y: scroll;*/
+  height: calc(100vh * .5);
+}
+
+.export-search {
+  box-shadow: 7px 7px 5px #888888;
+}
+
+.spatial-stats {
+  top: 135px;
+  z-index: 99;
+  width: 20%;
+  left: 24px;
+  position: fixed;
+  overflow: scroll;
+  height: 100%;
+  padding-bottom: 220px;
+  padding-right: 15px;
+}
+
+.pac-container .pac-logo {
+  display: none;
+}
+
+.mapboxgl-ctrl-group, .mapboxgl-ctrl {
+  background-color: rgba(255,255,255,0.7);
+}
+
+.filters-full-menu {
+  margin-bottom: 10%;
+}
+
+.ui.fixed.sticky + p {
+  margin-top: 80px;
+}

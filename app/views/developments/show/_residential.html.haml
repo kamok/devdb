@@ -1,0 +1,41 @@
+%br
+.ui.horizontal.divider Residential
+%h3.ui.header
+  Housing
+  .sub.header
+    Units by use type
+
+- if @development.housing_attributes.empty?
+  = link_to edit_development_path(@development) do
+    %button.ui.green.button
+      Contribute information
+    about housing for this development.
+
+- if @development.housing_attributes.any?
+  %table.ui.selectable.celled.table
+    %thead
+      %th
+        %h4.ui.header
+          .content
+            Housing Type
+      %th
+        %h4.ui.header
+          .content
+            Number of Units
+    %tbody
+      - @development.housing_attributes.each_pair do |field, value|
+        = render partial: 'developments/show/row', locals: { field: field,
+            value: value, conditional: true }
+    %tfoot
+      %tr
+        %th
+          %h4.ui.header
+            .content
+              = Development.human_attribute_name(:tothu)
+        %th
+          = number_with_delimiter(@development.tothu.to_i)
+
+  %table.ui.basic.selectable.celled.table
+    %tbody
+      = render partial: 'developments/show/row', locals: { field: :gqpop,
+        conditional: true, subheader: 'i.e. dorms, barracks, etc.' }

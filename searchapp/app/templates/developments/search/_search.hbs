@@ -1,0 +1,58 @@
+<h3 class="ui horizontal inverted divider header">
+  <i class="filter icon"></i>
+  Search Filters
+</h3>
+<a {{action 'click'}} href="#">Test Toggle</a>
+<form class="ui form inverted">
+  {{range-field-group from=yearFrom to=yearTo min=limits.year_compl.min max=limits.year_compl.max from_max=limits.year_compl.max label="Year:"}}
+  <div class="ui divider"></div>
+  {{range-field-group from=sqftFrom to=sqftTo min=limits.commsf.min max=limits.commsf.max from_max=limits.commsf.max label="Commercial Square Feet:"}}
+  <div class="ui divider"></div>
+  {{range-field-group from=tothuFrom to=tothuTo min=limits.tothu.min max=limits.tothu.max from_max=limits.tothu.max label="Total Housing Units:"}}
+  <div class="ui divider"></div>
+  <div class="field">
+    <label>Project Status:</label>
+    {{#ui-dropdown class="selection" onChange=(action 'update_selected') value=status}}
+
+      <div class="default text">Select an Option</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        {{#each itemActions as |itemAction|}}
+          <div class="item" data-value="{{itemAction.id}}">
+            {{itemAction.name}}
+          </div>
+        {{/each}}
+      </div>
+    {{/ui-dropdown}}
+  </div>
+  <div class="ui divider"></div>
+
+  <div class="ui segment">
+    <div class="ui top attached label">Project Tags - Click to Select</div>
+    <div class="ui tag labels">
+      {{toggle-label field=this.redevelopment label="Redevelopment"}}
+      {{toggle-label field=this.asofright label="As-of-Right"}}
+      {{toggle-label field=this.age_restricted label="Age Restricted"}}
+      {{toggle-label field=this.clusteros label="Cluster / Open Space"}}
+      {{toggle-label field=this.phased label="Phased"}}
+      {{toggle-label field=this.cancelled label="Cancelled"}}
+      {{toggle-label field=this.private label="Private"}}
+    </div>
+  </div>
+  <button {{action "reset"}} class="fluid ui button red">Clear Filters</button>
+  <div class="ui divider"></div>
+
+  <div class="two ui buttons">
+    <button {{action 'search'}} class="ui green button">
+      Search
+    </button>
+
+  </div>
+  <h3 class="ui horizontal inverted divider header">
+    <i class="star icon"></i>
+    Saved Searches
+  </h3>
+  <button {{action 'nameSearch'}} class="ui fluid teal button">Save</button>
+  <button {{action 'toggle'}} class="ui fluid green button">View Past Searches</button>
+
+</form>

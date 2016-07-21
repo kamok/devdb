@@ -1,0 +1,42 @@
+:ruby
+  set_meta_tags title: @development.name
+  set_meta_tags og: {
+    title:       @development.name,
+    url:         development_url(@development),
+    description: @development.tagline,
+    image:       image_development_url(@development),
+    type:        'development'
+  }
+  set_meta_tags twitter: { card: 'summary_large_image' }
+
+.row
+  .ten.wide.column#title-area
+    = render partial: 'developments/show/title'
+    #status
+      = render partial: 'developments/show/status'
+
+  .six.wide.column#actions
+    = render partial: 'developments/show/actions'
+
+= render partial: 'developments/show/tags'
+
+.row
+  .ten.wide.column
+    #data
+      = render partial: 'developments/show/physical'
+      = render partial: 'developments/show/transportation'
+      = render partial: 'developments/show/residential'
+      = render partial: 'developments/show/commercial'
+
+  .six.wide.column#sidebar
+    #map-container= render partial: 'developments/show/map'
+    #images=  render partial: 'developments/show/street_view'
+    #team=    render partial: 'developments/show/team'
+    #contrib= render partial: 'developments/show/contributors'
+    #related= render partial: 'developments/show/related'
+    #history= render partial: 'developments/show/history'
+
+-# .row
+-#   .column#context
+-#     .ui.horizontal.divider Neighborhood Context
+-#     = render partial: 'developments/show/context'

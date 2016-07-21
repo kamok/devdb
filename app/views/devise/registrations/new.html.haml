@@ -1,0 +1,58 @@
+:css
+  body {
+    background-color: #DADADA;
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 450px;
+  }
+
+
+.ui.middle.aligned.center.aligned.grid
+  .column
+    %h2 Welcome!
+    = render 'shared/flash'
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form new_user' }) do |f|
+
+      .ui.stacked.segment
+
+        .ui.message
+          If you used the previous version of the Development Database, you can
+          = succeed '.' do
+            = link_to 'go to the login page'
+
+        = devise_error_messages!
+
+        .field
+          = f.label :first_name
+          = f.text_field :first_name, placeholder: 'First name', autofocus: true
+
+        .field
+          = f.label :last_name
+          = f.text_field :last_name, placeholder: 'Last name'
+
+        .field
+          = f.label :email, 'Email address'
+          .ui.left.icon.input
+            %i.mail.icon
+            = f.email_field :email, placeholder: 'Email address'
+
+        .field
+          = f.label :password, 'Password (at least 8 characters)'
+          .ui.left.icon.input
+            %i.lock.icon
+            = f.password_field :password, placeholder: 'Password', autocomplete: 'off'
+
+        .field
+          = f.label :password_confirmation, 'Confirm password'
+          .ui.left.icon.input
+            %i.lock.icon
+            = f.password_field :password_confirmation, placeholder: 'Confirm password', autocomplete: 'off'
+
+        .ui.actions
+          = f.submit 'Sign me up!',  class: 'ui fluid large teal submit button'

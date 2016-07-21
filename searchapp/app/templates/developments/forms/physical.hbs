@@ -1,0 +1,52 @@
+<div id="data">
+  <div class="ui horizontal divider">Details</div>
+</div>
+<table class="ui celled table">
+  <tbody class="ui form">
+    <tr>
+      <td><div class="ui form"><div class="required field input"><label>Total Housing Units</label></div></div></td>
+      <td>
+        <div class="ui form">
+          <div class="required field input">
+            {{input type="text" value=model.tothu}}
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><div class="ui form"><div class="required field input"><label>Commercial Square Feet</label></div></div></td>
+      <td>
+        <div class="ui input">
+          {{input type="text" value=model.commsf}}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Project Area (in Square Feet)</td>
+      <td>
+        <div class="ui right labeled input">
+          {{input type="text" value=model.prjarea}}
+          <div class="ui basic label">
+            Square Feet
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Stories</td>
+      <td>
+        <div class="ui input">
+          {{input type="text" value=model.stories}}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td>
+        <div class="ui input">
+          {{input type="text" value=model.height}}
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

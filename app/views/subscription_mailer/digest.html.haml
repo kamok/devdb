@@ -1,0 +1,77 @@
+-# TODO:
+-#   - call out new developments that appear in a place or search
+
+- user = @digest.user
+
+%h3.ui.header
+  .content
+    = @digest.frequency.titleize
+    Summary of Development Updates
+    %i.history.icon
+%h2.ui.header
+  Changes since
+  = user.last_checked_subscriptions.to_s(:subject)
+
+.ui.row
+  .column
+    .ui.horizontal.list
+      .item
+        %h4 What's been updated?
+      .item
+        %i.blue.marker.icon
+        .content
+          = @digest.places.count
+          places
+      .item
+        %i.green.search.icon
+        .content
+          = @digest.searches.count
+          searches
+      .item
+        %i.orange.building.outline.icon
+        .content
+          = @digest.developments.count
+          developments
+
+%br
+%br
+
+- if @digest.places.any?
+  .ui.row
+    .column
+      .ui.horizontal.divider.header
+        %i.marker.icon
+        Places
+      - @digest.places.each do |place|
+        %h3= place.name
+        .ui.divided.items
+          = render partial: 'developments/digest',
+              collection: place.developments, as: :development
+
+- if @digest.searches.any?
+  .ui.row
+    .ui.horizontal.divider.header
+      %i.search.icon
+      Searches
+    - @digest.searches.each do |search|
+      %h3
+        Search
+        = search.id
+      .ui.divided.items
+        = render partial: 'developments/digest',
+            collection: search.developments, as: :development
+
+- if @digest.developments.any?
+  .ui.row
+    .ui.horizontal.divider.header
+      %i.building.outline.icon
+      Developments
+    .ui.divided.items
+      = render partial: 'developments/digest',
+          collection: @digest.developments, as: :development
+
+#footer
+  %p
+    = link_to edit_user_registration_url do
+      Edit your email preferences to unsubscribe or change
+      how often you receive emails.

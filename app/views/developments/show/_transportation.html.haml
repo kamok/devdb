@@ -1,0 +1,24 @@
+-# %h3.ui.header
+-#   Transportation
+-#   .sub.header
+-#     Transit, Parking, and Walking
+
+.ui.horizontal.divider
+
+.ui.large.basic.label#parking
+  %i.car.icon
+  = @development.onsitepark
+  on-site parking spaces
+
+- if @development.nearest_transit.present?
+  .ui.large.basic.label#transit
+    Nearest Transit Station
+    .detail
+      = @development.nearest_transit
+
+- unless @development.walkscore.empty?
+  = link_to @development.walkscore.to_h['help_link'], target: '_blank' do
+    .ui.large.basic.label
+      = @development.walkscore.score
+      .detail
+        WalkScore &reg;

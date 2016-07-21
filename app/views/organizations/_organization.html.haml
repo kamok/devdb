@@ -1,0 +1,16 @@
+= link_to organization, class: 'item' do
+  .ui.tiny.image
+    %img{ src: organization.gravatar_url }
+  .middle.aligned.content
+    .header
+      - if organization.municipal?
+        %i.university.icon
+      = organization.name
+    .meta
+      - if organization.location.present?
+        = organization.location
+        &bull;
+      = pluralize(organization.active_members.count, 'member')
+      - if organization.developments.any?
+        &bull;
+        = pluralize(organization.developments.count, 'development')

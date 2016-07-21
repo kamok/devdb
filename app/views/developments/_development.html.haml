@@ -1,0 +1,28 @@
+.ui.link.items
+  =link_to development, :class => 'item development' do
+    .image.small
+      %img{:src => "http://semantic-ui.com/images/wireframe/image.png"}
+    .content
+      .header= development.name
+      .meta
+        %span.address= development.address
+      .description
+        %p= development.tagline
+        .ui.basic.label.housing
+          %i.home.icon
+          = development.tothu
+          housing units
+        .ui.basic.label.retail
+          %i.building.icon
+          = development.commsf
+          retail sq. ft.
+      .extra
+        .ui.basic.orange.label
+          %i.random.icon
+          Mixed-use
+        .ui.basic.green.label
+          %i.users.icon
+          Affordable
+        .ui.basic.label
+          %i.configure.icon
+          In Construction

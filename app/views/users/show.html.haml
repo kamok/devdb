@@ -1,0 +1,74 @@
+:ruby
+  set_meta_tags title: @user.full_name
+  set_meta_tags og: {
+    title:       @user.full_name,
+    url:         user_url(@user),
+    image:       @user.gravatar_url(size: 125).html_safe,
+    type:        'person'
+  }
+
+  set_meta_tags twitter: {
+    label1: 'Contributions',
+    data1: @user.contributions.count
+  }.merge(@user.second_label_data)
+
+.row
+  .ui.twelve.column.grid
+    .four.wide.column
+      .ui.fluid.card
+        .image
+          %img{ src: @user.gravatar_url(size: 500) }
+        .content
+          .header
+            = @user.full_name
+          .meta
+            .ui.list
+              .item= @user.email
+              .item.date
+                Joined
+                = @user.joined
+              .item.contributions
+                = pluralize(@user.contributions.count, "contribution")
+
+      -# TODO: Handle nil current_user with an anonymous NullUser
+      - if current_user && current_user == @user.item
+        = link_to edit_user_registration_path,
+            class: 'ui basic orange button' do
+          %i.pencil.icon
+          Edit
+
+    .ten.wide.column
+
+      - if current_user == @user.item && @user.active_memberships.empty? && @user.pending_memberships.empty?
+
+        .ui.raised.very.padded.text.container.segment
+          %p
+            You aren't an active member of any
+            = succeed '.' do
+              = link_to 'organizations', organizations_path
+
+          %p
+            = link_to organizations_path, class: 'ui basic compact green button' do
+              %i.users.icon
+              Browse organizations
+            to find real estate development companies, municipal planning organizations, and other teams you belong to.
+
+      - if @user.active_memberships.any?
+
+        %h3 Member of
+        .ui.middle.aligned.relaxed.selection.list
+          = render @user.active_memberships
+
+      -# TODO: [Code Smell] NilCheck
+      - if current_user == @user.item
+        - if @user.pending_memberships.any?
+
+          %h3 Pending Membership Requests
+          .ui.middle.aligned.relaxed.selection.list
+            = render @user.pending_memberships
+
+        - if @user.pending_memberships.any?
+
+          = link_to organizations_path, class: 'ui basic compact green button' do
+            %i.add.icon
+            Find another organization to join.

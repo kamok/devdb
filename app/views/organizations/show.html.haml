@@ -1,0 +1,147 @@
+:ruby
+  set_meta_tags title: @organization.name
+  set_meta_tags og: {
+    title: @organization.name,
+    url:   organization_url(@organization),
+    image: @organization.gravatar_url,
+    type:  'organization'
+  }
+
+  set_meta_tags twitter: {
+    label1: 'Developments',
+    data1: @organization.developments.count,
+    label2: 'Members',
+    data2: @organization.members.count
+  }
+
+#main.ui.main.container
+  .ui.two.column.stackable.grid
+    .three.column.row
+      .two.wide.column
+        .ui.fluid.card
+          - if current_user.member_of? @organization
+            -# TODO: Partial me
+            %a.image{ href: 'https://en.gravatar.com/site/login', target: '_blank' }
+              %img{ src: @organization.gravatar_url }
+          - else
+            .image
+              %img{ src: @organization.gravatar_url }
+
+      .ten.wide.column
+        %h1#name
+          = @organization.name
+        #organization
+          #stats
+            %span#location
+              - if @organization.location.present?
+                %i.marker.icon
+                = @organization.location
+                &nbsp;
+                &nbsp;
+            %span#website
+              - if @organization.website.present?
+                %i.linkify.icon
+                = link_to @organization.website
+                &nbsp;
+                &nbsp;
+            %span#email
+              - if @organization.email.present?
+                %i.mail.outline.icon
+                = link_to @organization.email
+                &nbsp;
+                &nbsp;
+            %span#status
+              - if @organization.municipal?
+                %i.university.icon
+                Municipality
+              - else
+                - if @organization.memberships.active.any?
+                  - if @organization.developments.any?
+                    %i.star.icon
+                    Engaged Company
+                  - else
+                    %i.empty.star.icon
+                    Active Company
+                - else
+                  -# TODO Add a link to claim it here.
+                  Unclaimed Profile
+
+
+      .four.wide.column
+        .row
+          - leave = 'Are you sure you want to leave? You will not be able to re-join once you do.'
+          - cancel = "Are you sure you want to cancel your request to join #{@organization.name}? You will not be able to re-request once you do."
+          - if signed_in?
+            - if current_user.member_of? @organization
+              = link_to leave_organization_path(@organization), method: :post, data: { confirm: leave } do
+                %button.ui.right.floated.basic.button
+                  Leave Organization
+            - elsif current_user.member_of?(@organization, state: :pending)
+              = link_to leave_organization_path(@organization), method: :post, data: { confirm: cancel } do
+                %button.ui.right.floated.basic.orange.button
+                  Cancel Request
+            - else
+              = link_to join_organization_path(@organization), method: :post do
+                %button.ui.right.floated.green.button
+                  %i.users.icon
+                  Request Membership
+          - else
+            = link_to 'Sign in', signin_path
+            to join this organization or list your own.
+
+        - if current_user.admin_of? @organization.item
+          .row
+            = link_to admin_organization_path(@organization) do
+              %button.ui.right.floated.basic.gray.button
+                = @organization.memberships.pending.count
+                membership requests
+                %br
+                = @organization.memberships.active.count
+                active members
+
+
+  %br
+  %br
+
+  #tabs
+
+    .ui.top.attached.tabular.menu
+
+      %a.item.active{ data: { tab: 'developments' } }
+        Developments
+      %a.item{ data: { tab: 'people' } } People
+      -# Requires the item itself, not the presented item.
+      - if current_user && current_user.member_of?(@organization.item)
+        %a.item{ data: { tab: 'settings' } }
+          Settings
+
+    .ui.bottom.attached.tab.segment.active{ data: { tab: 'developments' } }
+      .ui.divided.items
+        - if @organization.developments.empty?
+          %p
+            This organization has no developments yet.
+          %p
+            - if current_user.member_of? @organization
+              = link_to new_development_path do
+                %button.ui.green.button
+                  Add a development.
+        = render partial: 'developments/related',
+          collection: DevelopmentPresenter.wrap(@organization.developments),
+          as: :development
+
+    .ui.bottom.attached.tab.segment{ data: { tab: 'people' } }
+      - if @organization.members.empty?
+        %p
+          This organization doesn't yet have any members.
+        %p
+          You can
+          = link_to join_organization_path(@organization), method: :post do
+            %button.ui.green.button
+              request membership
+          in this organization.
+      .ui.middle.aligned.relaxed.selection.list
+        = render partial: 'users/contributor_item',
+            collection: @organization.members, as: :contributor
+
+    .ui.bottom.attached.tab.segment{ data: { tab: 'settings' } }
+      = render partial: 'form'

@@ -1,0 +1,20 @@
+:ruby
+  tag_colors = {
+    private:   :grey,
+    rdv:       :red,
+    mixed_use: :orange,
+    asofright: :green,
+    ovr55:     :blue,
+    clusteros: :purple,
+    phased:    :pink,
+    stalled:   :black
+  }
+
+- tags = tag_colors.select { |tag, _color| @development.send(tag) }
+- if tags.any?
+  .row
+    .ten.wide.column
+      #tags
+        - tags.each do |b|
+          .ui.basic.label{ class: b.last }
+            = Development.human_attribute_name(b.first)

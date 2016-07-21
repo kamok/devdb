@@ -1,0 +1,22 @@
+.row
+  .column
+    %h3
+      Claiming
+      = @claim.development.name
+
+    %p Is your organization on the development team for this project?
+
+    .ui.form
+      = form_for @claim, url: development_claims_path do |f|
+        .eight.wide.field
+          = f.label :role, "What role does this organization play on the developent team?"
+          = f.select :role, Claim.role.options
+        -# TODO: Add more instructions.
+        -# TODO: Of your organizations, which are you claiming?
+        -# TODO: Add :organization to Claim
+        -# .eight.wide.field
+          -# = f.label :organization
+          -# = f.select :organization, current_user organization options
+          -# default: user's primary organization
+        = link_to "Cancel", @claim.development, class: 'ui basic button'
+        = f.submit "Claim", class: 'ui green submit button'

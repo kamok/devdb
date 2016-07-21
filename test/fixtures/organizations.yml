@@ -1,0 +1,22 @@
+mapc:
+  name: Metropolitan Area Planning Council
+  abbv: MAPC
+  short_name: MAPC
+  location: 'Boston, MA'
+  creator: normal
+  website: http://mapc.org
+
+massit:
+  name: Commonwealth of Massachusetts Division of Information Technology
+  abbv:
+  short_name: MassIT
+  creator: moderator
+  website: http://www.mass.gov/anf/research-and-tech/oversight-agencies/itd/
+
+bra:
+  name: Boston Redevelopment Authority
+  abbv: BRA
+  short_name: Boston Redevelop
+  creator: tim
+  website: http://bostonredevelopment.com
+  municipal: true

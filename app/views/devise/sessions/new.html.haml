@@ -1,0 +1,41 @@
+:css
+  body {
+    background-color: #DADADA;
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 450px;
+  }
+
+
+.ui.middle.aligned.center.aligned.grid
+  .column
+    %h2 Log in to your account
+    = render 'shared/flash'
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'ui form new_user' }) do |f|
+      .ui.stacked.segment
+
+        .field
+          .ui.left.icon.input
+            %i.user.icon
+            = f.email_field :email, placeholder: 'Email address', autofocus: true
+
+        .field
+          .ui.left.icon.input
+            %i.lock.icon
+            = f.password_field :password, placeholder: 'Password', autocomplete: "off"
+
+        - if devise_mapping.rememberable?
+          .field
+            .ui.checkbox
+              = f.check_box :remember_me, checked: true
+              = f.label     :remember_me
+          = f.submit 'Log in',  class: 'ui fluid large teal submit button'
+      .ui.error.message
+    .ui.message
+      = render "devise/shared/links"

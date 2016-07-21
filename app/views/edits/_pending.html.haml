@@ -1,0 +1,41 @@
+.ui.horizontal.divider
+
+= render partial: 'edits/edit', object: edit
+%p
+  %strong Reason:
+  = edit.log_entry
+
+- if edit.conflict?
+  .ui.basic.black.button.launch-modal{ data: { modal: "conflict-#{edit.id}" } }
+    %i.right.arrow.icon
+    Review Conflict
+  -# Maybe break conflict display into its own partial?
+  .ui.basic.modal{id: "conflict-#{edit.id}"}
+    %i.close.icon
+    .header  Review Conflict
+    .content
+      %ul
+        - edit.conflicts.each do |conflict|
+          %li= ConflictPresenter.new(conflict).description
+    .actions.left
+      = link_to decline_development_edit_path(@development, edit), method: :post do
+        .ui.red.button
+          %i.remove.icon
+          Decline
+
+      = link_to approve_development_edit_path(@development, edit), method: :post do
+        .ui.green.button
+          %i.checkmark.icon
+          Approve
+- else
+  = link_to decline_development_edit_path(@development, edit), method: :post do
+    .ui.basic.red.button
+      %i.remove.icon
+      Decline
+
+  = link_to approve_development_edit_path(@development, edit), method: :post do
+    .ui.basic.green.button
+      %i.checkmark.icon
+      Approve
+
+.ui.horizontal.divider

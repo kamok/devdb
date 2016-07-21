@@ -1,0 +1,81 @@
+= render 'shared/flash'
+
+.row
+  .ten.wide.column#title-area
+    %h2
+      Update your profile
+
+.row
+  .ui.six.column.grid
+    .column
+      .ui.fluid.card
+        %a.image{ href: 'https://en.gravatar.com/site/login',
+          target: '_blank' }
+          %img{ src: resource.gravatar_url(size: 250) }
+        .content
+          %a.header{ href: 'https://en.gravatar.com/site/login',
+            target: '_blank' }
+            #{resource.first_name} #{resource.last_name}
+          .meta
+            = link_to "Update your photo via Gravatar",
+              'https://en.gravatar.com/site/login', target: '_blank'
+    .five.wide.column
+
+      = form_for(resource, as: resource_name,
+          url: registration_path(resource_name),
+          html: { method: :put, class: 'ui form' }) do |f|
+
+        = devise_error_messages!
+
+        .field
+          = f.label :first_name, autofocus: true
+          = f.text_field :first_name
+
+        .field
+          = f.label :last_name
+          = f.text_field :last_name
+
+        .field
+          = f.label :email
+          = f.email_field :email
+
+        %hr
+
+        %ui.horizontal.divider Email frequency
+        %p
+          How often would you like to receive updates on the
+          developments you watch?
+        .grouped.fields
+          .field
+            .ui.radio.checkbox
+              = f.radio_button :mail_frequency, :never
+              = f.label :mail_frequency, 'Never', value: 'never'
+          .field
+            .ui.radio.checkbox
+              = f.radio_button :mail_frequency, :daily
+              = f.label :mail_frequency, 'Daily', value: 'daily'
+          .field
+            .ui.radio.checkbox
+              = f.radio_button :mail_frequency, :weekly
+              = f.label :mail_frequency, 'Weekly (recommended)',
+                  value: 'weekly'
+
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+        %hr
+
+        .field
+          .ui.ignored.message
+            Leave blank if you don't want to change your password.
+          = f.label :password
+          = f.password_field :password, autocomplete: 'off'
+
+        .field
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: 'off'
+
+        .actions
+          = link_to 'Cancel', resource, class: 'ui basic button'
+          = f.submit 'Update Profile',  class: 'ui green button'

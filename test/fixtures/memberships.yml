@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: normal
+  organization: mapc
+  role: admin
+  state: active
+
+two:
+  user: normal
+  organization: massit
+
+three:
+  user: moderator
+  organization: mapc
