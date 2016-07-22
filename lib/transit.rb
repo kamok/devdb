@@ -8,10 +8,8 @@ class Transit
 	end
 
 	def get_nearest_transit
-    key = 'parent_station_name'
-
-    subway_station = @MBTA_data['stop'].detect { |e| e[key].present? }
-    subway_station ? name = subway_station[key] : name = "Bus stop: #{@MBTA_data['stop'].first['stop_name']}"
+    subway_station = get_nearest_subway_station
+    name = subway_station ? subway_station['parent_station_name'] : get_nearest_bus_stop
 
     development.nearest_transit = name
 
@@ -21,13 +19,13 @@ class Transit
 
   private
 
- # 	def get_nearest_subway_station
+	def get_nearest_subway_station
+		@MBTA_data['stop'].detect { |e| e['parent_station_name'].present? }
+	end
 
-	# end
-
-	# def get_nearest_bus_stop
-		
-	# end 
+	def get_nearest_bus_stop
+		"Bus stop: #{@MBTA_data['stop'].first['stop_name']}"
+	end 
 
   def response
   	Net::HTTP.get_response(URI(url)).body
