@@ -8,6 +8,8 @@ before_script:
   - bundle exec rake db:create db:structure:load db:migrate
   - cd /home/travis/build/kamok/developmentdatabase/searchapp
   - npm install
+install:
+- bundle install --path vendor/bundle
 script:
   - bundle exec rake test
 cache: bundler
