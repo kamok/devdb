@@ -14,7 +14,7 @@ class Transit
     development.nearest_transit = name
 
     rescue StandardError => e
-      development.nearest_transit = "" # Return current value or empty string
+      development.nearest_transit = "none" # Return current value or empty string
   end
 
   private

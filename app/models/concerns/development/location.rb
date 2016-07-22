@@ -71,7 +71,6 @@ class Development
     #  Additionally:
     #  - Remember to add a 'none' display in the view if there is no transit.
     #  - Keep using Net::HTTP - no gem needed for something this simple.
-    #
     def get_nearest_transit
       Transit.new(self).get_nearest_transit
     end     

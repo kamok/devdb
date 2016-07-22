@@ -1,47 +1,18 @@
-# Development Database
-_(Name may change)_
+# Refactoring #get_nearest_transit
+The first area of interest is to identify which directory to place the refactored code. I chose lib because of a similar implementation with the WalkScore feature. I moved the entire script into a location.rb, ran the test, and see that it returned the same number of errors/skips: 2 failures, 18 errors, 48 skips
 
-[![Build Status](https://travis-ci.org/MAPC/developmentdatabase.svg?branch=develop)](https://travis-ci.org/MAPC/developmentdatabase)
-[![Code Climate](https://codeclimate.com/github/MAPC/developmentdatabase/badges/gpa.svg)](https://codeclimate.com/github/MAPC/developmentdatabase)
-[![Test Coverage](https://codeclimate.com/github/MAPC/developmentdatabase/badges/coverage.svg)](https://codeclimate.com/github/MAPC/developmentdatabase/coverage)
-[![Inline docs](http://inch-ci.org/github/MAPC/developmentdatabase.png)](http://inch-ci.org/github/MAPC/developmentdatabase)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MAPC/developmentdatabase?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+## Passing self to Transit class in location.rb
+The Development `model_callbacks.rb` run  `self.get_nearest_transit` inside the `location.rb`. Inside location.rb, the method `get_nearest_transit` makes a new class called `Transit` and passes the `Development` object on initialization with `Transit.new(self)`. We need to do so for 2 reason.
 
-The Development Database is a crowdsourced collection of recent ongoing and completed commercial and residential developments in Massachusetts.
+One is that we need to set `Development.nearest_transit` to something; either a subway station, bus station, or a "none". And two, is that we need `Development.latitude` and `Development.longitude` to make the API call to MBTA and get the transit data. 
 
-We're hard at work developing a new release that gives planners, developers, and enthusiasts advanced tools to find and understand developments, as well as the context in which they are built.
+## Building for change
 
-The Development Database is very important to the work we do at MAPC. High-quality data gathered from the Development Database fuels our regional projections, which helps us understand the future of the Metro Boston region. Municipalities and other public agencies use MAPC's projections to set housing and economic development goals. The data you contribute here will contribute to a better Metro Boston region for everyone.
+I move the code that makes the API call inside the `def initialize` method of `Transit`. I make this design decision, rather than following the convention of the `WalkScore` class to put everything inside initialization for two reason. One is the single responsiblity principle in SOLID. And another is the open/closed principle. After reading the MBTA API doc and looking at dd.mapc.org, I was able to determine that the `get_nearest_transit` option could be split into `get_nearest_bus_stop` and `get_nearest_subway_station` which are both valuable and could be used by the app. 
 
-### Actively working on:
+## Misc reasoning
+I left the logic for `def url` similar to `WalkScore` where the act of building the URL is a method on its own. Although I didn't use the constant variable, I do see merits to it for easy change being the first line of the class. 
 
-- :mag: __Search__ for developments quickly and easily. Start with one of our suggested searches to quickly find frequently searched-for developments. Then, export your developments as a spreadsheet or summary document.
-- :city_sunrise: __Understand the neighborhood__ through neighborhood context, including demographics and transportation information such as income breakdowns, public transit access, average parking ratios, and walkability scores.
-- :mailbox_with_mail: __Subscribe__ to developments, neighborhoods, or saved searches, and receive notifications when the developments or areas that interest you change.
-- :european_post_office: Create __organization pages__ to keep all of your team's developments in one place.
-- :trophy: __Gain reputation__ by contributing developments, improving data quality, or moderating developments.
-- :pushpin: __Claim__ developments that your development team is working on in the real world.
-- :triangular_flag_on_post: __Flag__ developments that you think need moderator attention.
+Some objects and methods have longer names. I am a believer of objects being longer and convey more about its place in the code for clarity over having a short object name. 
 
-
-### Roadmap
-
-- :calendar: __Longitudinal area studies__ that show a picture of the recent past and near future.
-- :earth_americas: __Opportunity identification__ to help developers discover potential opportunities.
-- :parking: __Parking utilization data__, to help developers support a right-sized parking ratio for their proposed developments.
-- :link: __Integrations__ with other development & property web services, as well as common applications like Slack.
-- :left_right_arrow: __Public API and Webhooks__, to enable custom integrations.
-
-
-### Contact
-
-If you have a GitHub account, [get in touch with us via Gitter chat][gitter].
-
-Are you interested in learning more about the Development Database? Contact Matt Cloyd, Web Developer at mcloyd@mapc.org.
-
-
-### Contributing
-
-Is there a feature you'd like to see? Would you like to get involved in a fairly complex Rails application? First, [get in touch on Gitter][gitter], and we'll go from there!
-
-[gitter]: https://gitter.im/MAPC/developmentdatabase
+At the end of the refactoring, we are still on  2 failures, 18 errors, 48 skips; that's fantastic. 
