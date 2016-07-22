@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 module Ddmodels2
   class Application < Rails::Application
     Dir.glob("#{Rails.root}/lib/**").each { |path| config.autoload_paths << path }
+
+    config.autoload_paths += %W(#{config.root}/lib)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

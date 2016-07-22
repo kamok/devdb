@@ -74,6 +74,7 @@ group :development do
   gem 'better_errors'     # Clearer error messages
   gem 'binding_of_caller' # REPL & more in error page
   gem 'byebug'            # Debugger
+  gem 'pry'               # Debugger
   gem 'web-console', '~> 2.0'
   gem 'guard', '>= 2.2.2',       require: false # Autorun tests
   gem 'guard-minitest',          require: false # MiniTest adapter

@@ -1,0 +1,72 @@
+942e6eeb8cdbfcb0b7f59d6f58f562b3a7c72b60		branch '1.0.0-beta' of git://github.com/thoughtbot/ember-cli-rails
+d028f92c49392d903ecee246c689bb43690e5f4b		branch 'examples' of git://github.com/thoughtbot/ember-cli-rails
+15d663df3debd3995c506d0948300e14369be44f		branch 'gh-pages' of git://github.com/thoughtbot/ember-cli-rails
+8746bf3e67ee99cc80077700bcb01506fb340db6		branch 'master' of git://github.com/thoughtbot/ember-cli-rails
+55b5e100f4e0e5bac49de05bd98e47eef532caac		branch 'sd-appveyor' of git://github.com/thoughtbot/ember-cli-rails
+652d66f6c1e6fe755c852591ce33c5ec88ef3e9d		branch 'sd-gemspec' of git://github.com/thoughtbot/ember-cli-rails
+6822c1c2ff8e88b95aa6c527a51386f4d75973ab		branch 'sd-rails-5' of git://github.com/thoughtbot/ember-cli-rails
+9d0c3fbea7df381f2d5f07b8001e54c764fa578a		branch 'sd-route-helpers' of git://github.com/thoughtbot/ember-cli-rails
+b0ba5737a60f86756295f9990e03679e980d0b82		branch 'set-pipefail' of git://github.com/thoughtbot/ember-cli-rails
+ba83120219a618ac55a668c6462db52c01d140dc		branch 'tee-gem' of git://github.com/thoughtbot/ember-cli-rails
+8d772fbb37cd087393a6835003f493dc34624a02	not-for-merge	tag 'v0.0.1' of git://github.com/thoughtbot/ember-cli-rails
+c634cbd015f5776d98a60061369fdd979b52e633	not-for-merge	tag 'v0.0.10' of git://github.com/thoughtbot/ember-cli-rails
+37e883484a7d31143842f8758a824ccd8c39fc81	not-for-merge	tag 'v0.0.11' of git://github.com/thoughtbot/ember-cli-rails
+cb7430d50ab94e2753adc0fb57567d7a7cc99e69	not-for-merge	tag 'v0.0.12' of git://github.com/thoughtbot/ember-cli-rails
+4e26eecfd5ae9e120d48808e5ae207fa7254aee9	not-for-merge	tag 'v0.0.13' of git://github.com/thoughtbot/ember-cli-rails
+0d802cede5147c6a4db29ca2159551912766d8c4	not-for-merge	tag 'v0.0.14' of git://github.com/thoughtbot/ember-cli-rails
+df1a8140de8e99f4e1cf0e31ec5dec4902ba711e	not-for-merge	tag 'v0.0.15' of git://github.com/thoughtbot/ember-cli-rails
+b76dca197b4afe3e243ca91fec33af8f7e6d9d7c	not-for-merge	tag 'v0.0.16' of git://github.com/thoughtbot/ember-cli-rails
+b82a76de0465d5ed65b22ce231344118cd364480	not-for-merge	tag 'v0.0.17' of git://github.com/thoughtbot/ember-cli-rails
+cb83e2d1b83210a4c667fc3b673ffc8a0364573c	not-for-merge	tag 'v0.0.18' of git://github.com/thoughtbot/ember-cli-rails
+afe230e5a283776865d41e2ef8bdf8f850414b27	not-for-merge	tag 'v0.0.2' of git://github.com/thoughtbot/ember-cli-rails
+dc89fed5066f614e69008b23812d285eb7c5adca	not-for-merge	tag 'v0.0.3' of git://github.com/thoughtbot/ember-cli-rails
+97256ac39434ce10dc7755cf7617004c86b2fc99	not-for-merge	tag 'v0.0.4' of git://github.com/thoughtbot/ember-cli-rails
+d8da25a39d9e71e981bc0591d17f4869211c77e8	not-for-merge	tag 'v0.0.5' of git://github.com/thoughtbot/ember-cli-rails
+7b02f4dbc2bd7b4f7fcb4e605236c7f28bfad348	not-for-merge	tag 'v0.0.6' of git://github.com/thoughtbot/ember-cli-rails
+b212f69f4d1f19a4a1322d052e0e4d7adb0f9290	not-for-merge	tag 'v0.0.7' of git://github.com/thoughtbot/ember-cli-rails
+361e10a80cb086942392bf73988ed175738586bb	not-for-merge	tag 'v0.0.8' of git://github.com/thoughtbot/ember-cli-rails
+77fe532f1a64d94614b210c3289f02ed04e9c710	not-for-merge	tag 'v0.0.9' of git://github.com/thoughtbot/ember-cli-rails
+42cf2f362060b9dd3824e7adf47dd0e03c95175e	not-for-merge	tag 'v0.1.0' of git://github.com/thoughtbot/ember-cli-rails
+7580f082090f9fdafa9e49f8f0572e1dcd9c4bd4	not-for-merge	tag 'v0.1.1' of git://github.com/thoughtbot/ember-cli-rails
+94780a03d75defc5b273eb1c6571203e64e514ab	not-for-merge	tag 'v0.1.10' of git://github.com/thoughtbot/ember-cli-rails
+03e09144f9d0c7de0a085889e2eceff2683443c6	not-for-merge	tag 'v0.1.11' of git://github.com/thoughtbot/ember-cli-rails
+bb8081ad2add0178ef329ac67562edc6eceb5783	not-for-merge	tag 'v0.1.12' of git://github.com/thoughtbot/ember-cli-rails
+038ca56ae6dcd1c3e8dc24606ab4649ba932285f	not-for-merge	tag 'v0.1.13' of git://github.com/thoughtbot/ember-cli-rails
+ec47fe8f008213e8a387a2a5b6640aaa545ccfd4	not-for-merge	tag 'v0.1.2' of git://github.com/thoughtbot/ember-cli-rails
+139ed965c00c43ca19662a0efa717b019708ce8f	not-for-merge	tag 'v0.1.3' of git://github.com/thoughtbot/ember-cli-rails
+eb286bcbe61ff675f963c014ba8c41b3683aa8b5	not-for-merge	tag 'v0.1.4' of git://github.com/thoughtbot/ember-cli-rails
+2119e374fe7687b3417bd563c81168393bc0f3fc	not-for-merge	tag 'v0.1.5' of git://github.com/thoughtbot/ember-cli-rails
+0aa4cc54a9f8f0624dbdd72759b4b53843e36754	not-for-merge	tag 'v0.1.6' of git://github.com/thoughtbot/ember-cli-rails
+177051244be03e3fcca57659c2f47650a3d35516	not-for-merge	tag 'v0.1.7' of git://github.com/thoughtbot/ember-cli-rails
+723c2e60289f181176c9d8d29d32b623537f2779	not-for-merge	tag 'v0.1.8' of git://github.com/thoughtbot/ember-cli-rails
+e59675db876d9f1a995cf76584729aa42b895a2a	not-for-merge	tag 'v0.1.9' of git://github.com/thoughtbot/ember-cli-rails
+c467af7ceaa95fa7af7d7bacad2f854be1df287e	not-for-merge	tag 'v0.2.0' of git://github.com/thoughtbot/ember-cli-rails
+b71b71ba007870a393e945303f59bd316bf3debd	not-for-merge	tag 'v0.2.1' of git://github.com/thoughtbot/ember-cli-rails
+0e7ca91119857db97b14b46c190558deaace3041	not-for-merge	tag 'v0.2.2' of git://github.com/thoughtbot/ember-cli-rails
+d146f8b7732389c4c97b1a6dc11cb1f084d9a5d8	not-for-merge	tag 'v0.2.3' of git://github.com/thoughtbot/ember-cli-rails
+85ee9475fe13778da0011638bc8c61d91a361b3c	not-for-merge	tag 'v0.3.0' of git://github.com/thoughtbot/ember-cli-rails
+af2f4ffed9279236ef3a01a51ec8d7878bcda37f	not-for-merge	tag 'v0.3.1' of git://github.com/thoughtbot/ember-cli-rails
+bcafd73e414f3cbf02de4b01381c0854f69f5ed8	not-for-merge	tag 'v0.3.2' of git://github.com/thoughtbot/ember-cli-rails
+7d899e9bc873b77cf63ecf7787e4380b3481d5ed	not-for-merge	tag 'v0.3.3' of git://github.com/thoughtbot/ember-cli-rails
+e81d2ec69b9930213751865659f8bedf2a0998bb	not-for-merge	tag 'v0.3.4' of git://github.com/thoughtbot/ember-cli-rails
+dc13dc9dc8d73009f4504e96b1bccb03894dae48	not-for-merge	tag 'v0.3.5' of git://github.com/thoughtbot/ember-cli-rails
+1e2cb227fc0840af159731312b5b057e95297c27	not-for-merge	tag 'v0.4.0' of git://github.com/thoughtbot/ember-cli-rails
+02e06a21d5f6cdafc84d7bff415dc2baaa8e4914	not-for-merge	tag 'v0.4.1' of git://github.com/thoughtbot/ember-cli-rails
+f848970fa6744627b3276d334045eecdd0c1ee6c	not-for-merge	tag 'v0.4.2' of git://github.com/thoughtbot/ember-cli-rails
+668dce8ad7e2f675daf2439737f0ae812d33687a	not-for-merge	tag 'v0.4.3' of git://github.com/thoughtbot/ember-cli-rails
+51908321e0d7bad5a396a6a79274ff8ff6ffde59	not-for-merge	tag 'v0.5.0' of git://github.com/thoughtbot/ember-cli-rails
+fdb3cfb7623391215fb13f2d9ffc731e6fb33aaa	not-for-merge	tag 'v0.5.1' of git://github.com/thoughtbot/ember-cli-rails
+a8f3b3c6ac949fd7866f06afecd563fbcdc16460	not-for-merge	tag 'v0.5.2' of git://github.com/thoughtbot/ember-cli-rails
+462a0411e894351a28d07a910b1458395f3f7875	not-for-merge	tag 'v0.5.3' of git://github.com/thoughtbot/ember-cli-rails
+cd12aed2d9db048a7f6d61975c074141b3910554	not-for-merge	tag 'v0.5.4' of git://github.com/thoughtbot/ember-cli-rails
+764fafd9e46e54cd9eadbfe92af4fad50ee1a2d4	not-for-merge	tag 'v0.5.5' of git://github.com/thoughtbot/ember-cli-rails
+95eaa0be0a33471ebe4041b999ca5bbf96335241	not-for-merge	tag 'v0.5.6' of git://github.com/thoughtbot/ember-cli-rails
+e07d5024978dc0c9b6e34c09aafc8a67f3935f44	not-for-merge	tag 'v0.5.7' of git://github.com/thoughtbot/ember-cli-rails
+37953aeb400d9d9af8d36b017f1d827d886ade00	not-for-merge	tag 'v0.5.8' of git://github.com/thoughtbot/ember-cli-rails
+c6c2ab08ef09450a84b90fdddf286dfb1c909867	not-for-merge	tag 'v0.6.0' of git://github.com/thoughtbot/ember-cli-rails
+cd6825812f91c1a3cd6f49d0afaa062e03092b2f	not-for-merge	tag 'v0.6.1' of git://github.com/thoughtbot/ember-cli-rails
+3e5e3cd0edf3cb4537efffb1bc7d86a8ad8331af	not-for-merge	tag 'v0.7.0' of git://github.com/thoughtbot/ember-cli-rails
+9a800cea9ce5dfc19ac4351ff201ab3686363981	not-for-merge	tag 'v0.7.1' of git://github.com/thoughtbot/ember-cli-rails
+6a09ee64e2a6f9832d93fc29baac5019bdc109d2	not-for-merge	tag 'v0.7.2' of git://github.com/thoughtbot/ember-cli-rails
+909297f168658422dbfdc0632ac2aa12913fbb6c	not-for-merge	tag 'v0.7.3' of git://github.com/thoughtbot/ember-cli-rails
+4906bb01b1762f108a83dcb6ae85b5e3207de5d4	not-for-merge	tag 'v0.7.4' of git://github.com/thoughtbot/ember-cli-rails

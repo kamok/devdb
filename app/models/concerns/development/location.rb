@@ -73,24 +73,7 @@ class Development
     #  - Keep using Net::HTTP - no gem needed for something this simple.
     #
     def get_nearest_transit
-      key = 'parent_station_name'
-
-      url = "http://realtime.mbta.com/developer/api/v2/stopsbylocation?"
-      url << "api_key=#{ENV['MBTA_API_KEY']}"
-      url << "&lat=#{latitude.to_f}&lon=#{longitude.to_f}&format=json"
-
-      json = JSON.parse(Net::HTTP.get_response(URI(url)).body)
-
-      station = json['stop'].detect { |e| e[key].present? }
-      name = if station
-        station[key]
-      else
-        "Bus stop: #{json['stop'].first['stop_name']}"
-      end
-      self.nearest_transit = name
-    rescue StandardError => e
-      self.nearest_transit = "" # Return current value or empty string
-    end
-
+      Transit.new(self).get_nearest_transit
+    end     
   end
 end

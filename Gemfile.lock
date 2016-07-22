@@ -426,6 +426,7 @@ DEPENDENCIES
   periscope-activerecord
   pg
   pg_search
+  pry
   puma
   rack-cors
   rails (= 4.2.5.1)
