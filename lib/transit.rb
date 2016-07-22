@@ -3,7 +3,7 @@ class Transit
 	attr_accessor :development
 
 	def initialize(development)
-		@development = development
+		@development = development  #used to set development.nearest_transit and geo location API call
 		@MBTA_data = JSON.parse(response)
 	end
 
