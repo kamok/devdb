@@ -98,6 +98,7 @@ group :test do
   gem 'launchy'
   gem 'rake' # Specified for Travis CI
   gem 'webmock' # Disable network connections
+  gem 'simplecov', :require => false #altnerative for Travis CI
 end
 
 group :staging, :production do
