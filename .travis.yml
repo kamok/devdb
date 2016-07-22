@@ -2,15 +2,15 @@ language: ruby
 sudo: false
 rvm:
   - 2.2.4
-# before_script:
-#   - export TZ=America/New_York
-#   - psql -c 'create database ddmodels2_test;' -U postgres
-#   - bundle exec rake db:create db:structure:load db:migrate
-#   - cd /home/travis/build/MAPC/developmentdatabase/searchapp
-#   - npm install
-# script:
-#   - bundle exec rake test
-# cache: bundler
+before_script:
+  - export TZ=America/New_York
+  - psql -c 'create database ddmodels2_test;' -U postgres
+  - bundle exec rake db:create db:structure:load db:migrate
+  - cd /home/travis/build/kamok/developmentdatabase/searchapp
+  - npm install
+script:
+  - bundle exec rake test
+cache: bundler
 addons:
   postgresql: '9.3'
   code_climate:
